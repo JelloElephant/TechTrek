@@ -37,7 +37,7 @@ User.init(
       },
     },
   },
-  // making sure the password of the user is hashed before continuing
+  // making sure the password of the user is hashed/unreadable before continuing
   {
     hooks: {
       beforeCreate: async (newUserData) => {
