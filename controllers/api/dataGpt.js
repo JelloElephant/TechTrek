@@ -7,7 +7,6 @@ const fetch = (...args) =>
 
 router.post('/', async function (req, res) {
 const key = 'Bearer ' + API_KEY;
-/* const key = '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'; */
 const url = 'https://api.openai.com/v1/chat/completions';
 const options = {
   method: 'POST',
