@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 
 class Trips extends Model {}
 
+// trips data
 Trips.init(
     {
         id: {
