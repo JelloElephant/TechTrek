@@ -8,6 +8,7 @@ class User extends Model {
   }
 }
 
+// user data
 User.init(
   {
     id: {
@@ -36,6 +37,7 @@ User.init(
       },
     },
   },
+  // making sure the password of the user is hashed/unreadable before continuing
   {
     hooks: {
       beforeCreate: async (newUserData) => {
