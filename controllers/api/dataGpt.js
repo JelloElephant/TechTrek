@@ -2,17 +2,17 @@ const express = require('express');
 const router = express.Router();
 const prompt = 'Say this is a test';
 
-const fetch = (...args) =>
-  import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = require('node-fetch')
+  
 
 router.post('/', async function (req, res) {
-const key = 'Bearer ' + API_KEY;
+const key = 'Bearer ' + process.env.API_KEY;
 const url = 'https://api.openai.com/v1/chat/completions';
 const options = {
   method: 'POST',
   headers: {
-    'content type': 'application/json',
-    'authorization': key
+    'Content-Type': 'application/json',
+    'Authorization': key
   },
   body: JSON.stringify({
     "model": "gpt-3.5-turbo",
@@ -26,7 +26,7 @@ const options = {
   }
   )
 };
-
+console.log('hit')
 try {
   const res = await fetch(url, options);
   const json = await res.json();
@@ -38,17 +38,19 @@ try {
 
 /////////////////////////////////
 
-/* const { Configuration, OpenAIApi } = require("openai");
+const { Configuration, OpenAIApi } = require("openai");
+
 const configuration = new Configuration({
-  apiKey: process.env.API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
-const response = await openai.createCompletion({
-  model: "text-davinci-003",
-  prompt: "Say this is a test",
-  max_tokens: 7,
-  temperature: 0,
-}); */
+
+const completion = await openai.createChatCompletion({
+  model: "gpt-3.5-turbo",
+  messages: [{role: "user", content: "Hello world"}],
+});
+console.log(completion.data.choices[0].message);
+
 
 /////////////////////////////////
 
