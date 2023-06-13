@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 
 class Trips extends Model {}
 
-// trips data for project
+// trips data
 Trips.init(
     {
         id: {
@@ -17,12 +17,20 @@ Trips.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        coordinates: {
+            type: DataType.STRING,
+            allowNull: false,
+        },
         date: {
             type: DataTypes.DATE,
             allowNull: false,
         },
         description: {
             type: DataType.STRING,
+            allowNull: false,
+        },
+        weather: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
         user_id: {
