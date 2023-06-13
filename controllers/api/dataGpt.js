@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const prompt = '10 things to do in minneapolis this weekend';
 
 const fetch = (...args) =>
   import('node-fetch').then(({default: fetch}) => fetch(...args));
@@ -12,7 +13,19 @@ const options = {
   headers: {
     'content type': 'application/json',
     'authorization': key
+  },
+  body: JSON.stringify({
+    "model": "gpt-3.5-turbo",
+    "prompt": prompt,
+    "max_tokens": 7,
+    "temperature": 0,
+    "top_p": 1,
+    "n": 1,
+    "stream": false,
+    "logprobs": null,
+    "stop": "\n"
   }
+  )
 };
 
 try {
