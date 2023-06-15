@@ -4,6 +4,6 @@ const userRoutes = require('./userRoutes');
 const gptRoutes = require('./dataGpt');
 
 router.use('/users', userRoutes);
-router.use('/gpt', gptRoutes)
+router.use('/gpt', gptRoutes);
 
 module.exports = router;
