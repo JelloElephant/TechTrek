@@ -5,30 +5,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registry</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/node_modules/dracula-ui/styles/dracula-ui.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      User Registry
-    </h1>
-    {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
-    {{/if}}
+<!-- navbar -->
+  <header>
+    <img class="nav_logo" src="/img/TechTrek_highres.png" alt="logo">
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#"><button>Login</button></a>
+      <a href="#"><button>Sign Up</button></a>
   </header>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
-      
-  </footer>
 
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+
+
+<!-- content -->
+
+
+
+<!-- footer -->
+  <footer>
+    <div class="footer_logo"><img src="/img/TechTrek_lowres.png" alt="logo"></div>
+      <ul class="list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Github</a></li>
+      </ul>
+  </footer>
 </body>
 
 </html>
