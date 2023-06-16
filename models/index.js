@@ -1,6 +1,7 @@
 const User = require('./User');
+const Trips = require('./trips');
 
-module.exports = { User };
+module.exports = { User, Trips };
 
 // connecting trips to user with their foreign key.
 Trips.belongsTo(User, {

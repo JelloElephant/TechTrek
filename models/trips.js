@@ -18,7 +18,7 @@ Trips.init(
             allowNull: false,
         },
         coordinates: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         date: {
@@ -26,7 +26,7 @@ Trips.init(
             allowNull: false,
         },
         description: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         weather: {
