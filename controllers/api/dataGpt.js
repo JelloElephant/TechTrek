@@ -23,7 +23,7 @@ res.send(output);
   } catch (err) {
     res.status(400).json(err);
   }
-/*   return output; */
+
 });
 
 module.exports = router;
