@@ -14,13 +14,14 @@ Results.init(
             autoIncrement: true,
         },
         array: {
-            type: DataTypes.JSON,
+            type: DataTypes.STRING,
             allowNull: false
         }
       
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'results',

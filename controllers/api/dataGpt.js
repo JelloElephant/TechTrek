@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const mysql = require('mysql2');
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
   apiKey: process.env.API_KEY,
@@ -14,19 +15,41 @@ const completion = await openai.createChatCompletion({
 });
 const parseStr = completion.data.choices[0].message.content
 const data = parseStr.split(/[\n\n]/)
-/* res.render(data) */;
-// Function to insert single row values in
-// the database
+/* const data = ("data"); */
+console.log(data)
+/* res.render(data); */
 
-	let query = `INSERT INTO user_db.results
-		(array) VALUES (?);`;
-console.log(query)
-	// Creating queries
-	db_con.query(query, [data], (err, rows) => {
-		if (err) throw err;
-		console.log("Row inserted with id = "
-			+ rows.insertId);
-	});
+// Save the data to MySQL
+
+const connection = mysql.createConnection({
+  host:'localhost',
+  user:'root',
+  password:'Cid7677!',
+  database:'techtrek_db'
+});
+
+connection.connect(function(err){
+  if (err) throw err;
+  console.log('Connected');
+  const sql = 'insert into results (array) values (?)';
+  connection.query(sql, data, function (err,result){
+    if (err) throw err;
+    console.log('record inserted')
+  });
+});
+
+/* const sql = 'INSERT INTO techtrek_db.results (array) VALUES ?';
+const values = data;
+console.log('hit1')
+connection.query(sql, values, (err, result) => {
+  if (err) {
+    console.error('Error saving data to MySQL:', err);
+    res.status(500).json({ error: 'Failed to save data to MySQL' });
+  } else {
+    console.log('Data saved to MySQL:', result);
+    res.status(200).json({ message: 'Data saved successfully' });
+  }
+}); */
 console.log('hit2')
 
 
