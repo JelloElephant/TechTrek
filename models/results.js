@@ -14,7 +14,7 @@ Results.init(
             autoIncrement: true,
         },
         array: {
-            type: DataTypes.STRING,
+            type: DataTypes.JSON,
             allowNull: false
         }
       

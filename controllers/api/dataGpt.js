@@ -8,15 +8,18 @@ const openai = new OpenAIApi(configuration);
 
 router.post('/', async (req, res) => {
   try {
-const payload = {'role':'user','content':req.body.query}
+const payload = {'role':'user','content':'list '+req.body.number+'things to do in '+req.body.city}
 const completion = await openai.createChatCompletion({
   model: "gpt-3.5-turbo",
   messages: [payload],
 });
 const parseStr = completion.data.choices[0].message.content
-const data = parseStr.split(/[\n\n]/)
-/* const data = ("data"); */
+const data = JSON.stringify(parseStr.split(/[\n\n]/))
+/* const data = JSON.stringify(parseStr); */
+
 console.log(data)
+
+
 /* res.render(data); */
 
 // Save the data to MySQL
@@ -38,18 +41,6 @@ connection.connect(function(err){
   });
 });
 
-/* const sql = 'INSERT INTO techtrek_db.results (array) VALUES ?';
-const values = data;
-console.log('hit1')
-connection.query(sql, values, (err, result) => {
-  if (err) {
-    console.error('Error saving data to MySQL:', err);
-    res.status(500).json({ error: 'Failed to save data to MySQL' });
-  } else {
-    console.log('Data saved to MySQL:', result);
-    res.status(200).json({ message: 'Data saved successfully' });
-  }
-}); */
 console.log('hit2')
 
 
@@ -63,23 +54,4 @@ console.log('hit2')
 
 module.exports = router;
 
-/* app.post('/your-route', (req, res) => {
-  const data = req.body; // Assuming the data is sent as the request body
-
-  // Perform the necessary data processing and validation
-
-  // Save the data to MySQL
-  const sql = 'INSERT INTO results (array) VALUES ?';
-  const values = [data];
-
-  connection.query(sql, values, (err, result) => {
-    if (err) {
-      console.error('Error saving data to MySQL:', err);
-      res.status(500).json({ error: 'Failed to save data to MySQL' });
-    } else {
-      console.log('Data saved to MySQL:', result);
-      res.status(200).json({ message: 'Data saved successfully' });
-    }
-  });
-}); */
 
