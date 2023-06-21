@@ -11,18 +11,18 @@
 </head>
 
 <body>
-<!-- navbar -->
-  <header>
-    <img class="nav_logo" src="/img/TechTrek_highres.png" alt="logo">
-      <nav>
-        <ul class="nav_links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <a href="#"><button>Login</button></a>
-      <a href="#"><button>Sign Up</button></a>
+
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>
+      User Registry
+    </h1>
+ 
+    {{#if logged_in}}
+    <nav>
+      <button class="btn" id="logout">logout</button>
+    </nav>
+    {{/if}}
+
   </header>
 
 
@@ -41,6 +41,13 @@
         <li><a href="#">Github</a></li>
       </ul>
   </footer>
+
+
+  
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
 </body>
 
 </html>
