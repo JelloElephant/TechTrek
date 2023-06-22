@@ -36,6 +36,7 @@ connection.connect(function(err){
   connection.query(sql, data, function (err,result){
     if (err) throw err;
     /* console.log('record inserted') */
+    res.status(200).json({success: true})
   });
 });
 
