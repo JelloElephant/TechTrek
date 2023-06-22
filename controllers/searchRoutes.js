@@ -1,18 +1,29 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const sequelize = require('../config/connection');
 const { Results } = require('../models');
-
 
 router.get('/',  async (req, res) => {
   try {
-    const resultsData = await Results.findAll({
-      /* attributes: { exclude: ['password'] }, */
-    });
+
+const count = await Results.findOne({
+    attributes: [
+      [sequelize.fn('COUNT', sequelize.col('id')), 'idCount']
+    ]
+  });
+  const idCount = count.get('idCount');
+  /* console.log(idCount); */
+
+const resultsData = await Results.findAll({
+    where: {
+      id: idCount
+    }
+  });
+
+/* console.log(resultsData) */
 
     const results = resultsData.map((project) => project.get({ plain: true }));
-
+    /* console.log(results) */
     res.render('searchpage', {
-     /*  res.render('searchpage', { */
       results,
       logged_in: req.session.logged_in,
     });
@@ -21,6 +32,9 @@ router.get('/',  async (req, res) => {
   }
 });
 
-
+router.get('/button-home', (req, res) => {
+  
+    res.redirect('/');
+  });
 
 module.exports = router;

@@ -19,6 +19,13 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+router.get('/button-click', (req, res) => {
+  // Perform any necessary logic or processing here
+
+  // Redirect to another screen or URL
+  res.redirect('/search');
+});
+
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
