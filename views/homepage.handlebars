@@ -1,51 +1,85 @@
-<div class="container">
-  <div class="container-content">
-    <!-- search bar -->
-    <div id="container-search">
-      <div id="container-searchBar">
-        <label for="location-picker" id="option-text">Choose a State/City:</label>
-          <select name="location-picker" id="location-picker">
-            <optgroup label="States">
-              <option value="Minnesota">Minnesota</option>
-              <option value="Wisconsin">Wisconsin</option>
-            </optgroup>
-            <optgroup label="Cities">
-              <option value="Maple Grove">Maple Grove</option>
-              <option value="Green Bay">Green Bay</option>
-            </optgroup>
-          </select>
-      </div>
-      <span id="searchBar-desc">
-        <span class="whiteText">Choose from our selection of Popular States and Cities</span>
-      </span>
-      </div>
-    </div>
-    <!-- choose dates -->
-    <div id="container-dates">
-        <div class="container-futureDate">
-            <label class="date-text" for="birthday">Start Date:</label>
-            <input class="date" type="date" id="birthday" name="birthday">
 
-        </div>
-        <i class="fa-solid fa-right-left fa-2xl" id="swapSym"></i>
-        <div class="container-pastDate">
-            <label class="date-text" for="birthday">End Date:</label>
-            <input class="date" type="date" id="birthday" name="birthday">
-        </div>
+<div class="containter-content drac-box">
+  <div id="container-search">
+    <div id="container-searchBar">
+      <label for="location-picker" id="option-text">Choose a State/City:</label>
+
+        <select name="location-picker" id="location-picker">
+          <optgroup label="States">
+            <option value="Minnesota">Minnesota</option>
+            <option value="Wisconsin">Wisconsin</option>
+          </optgroup>
+          <optgroup label="Cities">
+            <option value="Maple Grove">Maple Grove</option>
+            <option value="Green Bay">Green Bay</option>
+          </optgroup>
+        </select>
+
     </div>
-    <!-- choose quantity-->
-    <div id="container-quantity">
-      <span id="quantity-text" class="whiteText">How many ideas:</span>
-      <input type="text" name="quantity" id="quantity-box" value="Enter a number">
-    </div>
-    <div id="container-getResults">
-      <div id="container-butSearch">
-          <button id="butSearch">- - Search - -</button>
-      </div>
-      <span id="butSearch-desc" class="whiteText">Please Note: We will attempt to gather how
-          many results you want to view, but we cannot garentee we
-          will find the amount or the last few results be certian.
-      </span>
+    <span id="searchBar-desc">
+      <span class="whiteText">Choose from our selection of Popular States and Cities</span>
+    </span>
     </div>
   </div>
+  {{!-- <div id="container-dates">
+    <div class="container-futureDate">
+          <label class="date-text" for="birthday">Start Date:</label>
+          <input class="date" type="date" id="birthday" name="birthday">
+      </div>
+      <i class="fa-solid fa-right-left fa-2xl" id="swapSym"></i>
+      <div class="container-pastDate">
+          <label class="date-text" for="birthday">End Date:</label>
+          <input class="date" type="date" id="birthday" name="birthday">
+      </div>
+  </div> --}}
+  <div id="container-quantity">
+    <span id="quantity-text" class="whiteText">How many ideas:</span>
+    <input type="text" name="quantity" id="quantity-box" value="Enter a number">
+  </div>
+  <div id="container-getResults">
+    <div id="container-butSearch">
+          <button id="butSearch">- - Search - -</button>
+    </div>
+    <span id="butSearch-desc" class="whiteText">Please Note: We will attempt to gather how
+          many results you want to view, but we cannot garentee we
+          will find the amount or the last few results be certian.
+    </span>
+  </div>
 </div>
+
+<script>
+  console.log('hit1')
+  document.getElementById("butSearch").addEventListener("click", function() {
+    const location = document.getElementById("location-picker").value;
+    //const startDate = document.getElementById("start-date").value;
+    //const endDate = document.getElementById("end-date").value;
+    const quantity = document.getElementById("quantity-box").value;
+
+    const data = {
+      location: location,
+      //startDate: startDate,
+      //endDate: endDate,
+      quantity: quantity
+    };
+
+    fetch('/api/gpt', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Request successful');
+        // Process the response or perform any desired actions
+      } else {
+        console.error('Request failed');
+      }
+    })
+    .catch(error => {
+      console.error('Request error:', error);
+    });
+  });
+</script>
+
