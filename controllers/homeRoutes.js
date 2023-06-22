@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User } = require('../models');
-const { Results } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -18,6 +17,13 @@ router.get('/', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.get('/button-click', (req, res) => {
+  // Perform any necessary logic or processing here
+
+  // Redirect to another screen or URL
+  res.redirect('/search');
 });
 
 router.get('/login', (req, res) => {
