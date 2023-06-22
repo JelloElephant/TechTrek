@@ -1,3 +1,7 @@
+html, body {
+    height: 85vh;
+}
+
 /* navbar styles */
 li, a {
     font-size: 16px;
@@ -46,8 +50,6 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.8);
     scale: 110%;
 }
-
-
 /* footer styles */
 footer {
     background-color: #303030;
@@ -70,4 +72,156 @@ footer li {
     padding-bottom: 25px;
     text-align: center;
     text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.container {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.container-content {
+    background-color: rgb(62, 62, 62);
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    min-height: 50%;
+    border-radius: 22px;
+}
+.whiteText{
+    color: white;
+}
+
+
+
+/* search bar styles */
+#container-search {
+    background-color: rgb(240, 32, 32);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px 22px 0px 0px;
+}
+#container-searchBar {
+    background-color: white;
+    width: 50%;
+    height: 45%;
+    border-radius: 15px;
+    /* REMOVE */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+}
+#option-text {
+    margin-left: 5%;
+}
+#location-picker{
+    width: 60%;
+    height: 100%;
+    border-radius: 0px 15px 15px 0px;
+    padding-left: 2%;
+    font-size: 18px;
+}
+#searchBar-desc {
+    margin: 10px;
+}
+/* date styles */ 
+#container-dates {
+    background-color: rgb(62, 62, 62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+}
+.date-text {
+    margin-left: 8%;
+}
+.date {
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+}
+.container-futureDate{
+    background-color: white;
+    display: flex;
+    width: 25%;
+    height: 30%;
+    margin: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+#swapSym {
+    margin: 1%;
+}
+.container-pastDate{
+    background-color: white;
+    display: flex;
+    width: 25%;
+    height: 30%;
+    margin: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+/* quantity styles */
+#container-quantity {
+    background-color: rgb(62, 62, 62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+}
+#quantity-text {
+    margin-right: 10px;
+    font-size: 20px;
+}
+#quantity-box {
+    width: 15%;
+    border-radius: 15px;
+    text-align: center;
+    padding: 5px;
+}
+/* search button */
+#container-getResults {
+    background-color: rgb(62, 62, 62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-direction: column;
+    border-radius: 0px 0px 22px 22px;
+}
+#container-butSearch {
+    width: 50%;
+    height: 35%;
+}
+#butSearch{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    font-size: 25px;
+}
+#butSearch-desc {
+    margin-top: 10px;
+}
+#butSearch-desc {
+    width: 60%;
+    text-align: center;
+    font-size: 12px;
 }
