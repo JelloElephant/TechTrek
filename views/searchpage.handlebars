@@ -2,8 +2,20 @@
 <div class="container">
     <div class="container-content">
 <!-- loop through api data -->
-        {{#each items}}
-            <p>{{this}}</p>
+        {{#each results as |result|}}
+            
+            <h2> {{result.array}}</h2>
+            
         {{/each}}
     </div>
 </div>
+<div id="container-butHome">
+          <button onclick="homePage()" id="butHome">- - Home - -</button>
+    </div>
+
+
+<script>
+    function homePage() {
+      window.location.href = '/';
+    }
+</script>
