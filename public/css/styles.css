@@ -81,6 +81,7 @@ footer li {
 
 
 
+/* container setup */
 
 .container {
     background-color: rgb(255, 255, 255);
@@ -95,9 +96,11 @@ footer li {
     display: flex;
     flex-direction: column;
     width: 60%;
+
     min-height: 50%;
     border-radius: 22px;
 }
+
 .whiteText{
     color: white;
 }
@@ -111,12 +114,14 @@ footer li {
     flex-direction: column;
     width: 100%;
     height: 25%;
+
     justify-content: center;
     align-items: center;
     border-radius: 22px 22px 0px 0px;
 }
 #container-searchBar {
     background-color: white;
+
     width: 50%;
     height: 45%;
     border-radius: 15px;
@@ -127,6 +132,17 @@ footer li {
     margin-top: 2%;
 }
 #option-text {
+
+    display: flex;
+    width: 50%;
+    height: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+#searchText {
     margin-left: 5%;
 }
 #location-picker{
@@ -135,6 +151,7 @@ footer li {
     border-radius: 0px 15px 15px 0px;
     padding-left: 2%;
     font-size: 18px;
+
 }
 #searchBar-desc {
     margin: 10px;
@@ -142,11 +159,21 @@ footer li {
 /* date styles */ 
 #container-dates {
     background-color: rgb(62, 62, 62);
+    padding: 8px;
+    border: none;
+    border-left: 1px solid black;
+}
+
+/* date container styles */
+#container-dates {
+    background-color: rgb(255, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+
     height: 25%;
+
 }
 .date-text {
     margin-left: 8%;
@@ -154,8 +181,13 @@ footer li {
 .date {
     height: 100%;
     border-radius: 0px 10px 10px 0px;
+
 }
 .container-futureDate{
+    border: none;
+    border-left: 1px solid black;
+}
+#container-startDate{
     background-color: white;
     display: flex;
     width: 25%;
@@ -165,10 +197,14 @@ footer li {
     align-items: center;
     border-radius: 10px;
 }
+
 #swapSym {
     margin: 1%;
 }
 .container-pastDate{
+=======
+#container-endDate{
+
     background-color: white;
     display: flex;
     width: 25%;
@@ -178,14 +214,24 @@ footer li {
     align-items: center;
     border-radius: 10px;
 }
+
 /* quantity styles */
 #container-quantity {
     background-color: rgb(62, 62, 62);
+
+
+
+/* quantity styles */
+#container-quantity {
+    background-color: rgb(255, 0, 238);
+
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+
     height: 15%;
+
 }
 #quantity-text {
     margin-right: 10px;
@@ -197,9 +243,11 @@ footer li {
     text-align: center;
     padding: 5px;
 }
+
 /* search button */
 #container-getResults {
     background-color: rgb(62, 62, 62);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,9 +264,14 @@ footer li {
     height: 100%;
     border-radius: 25px;
     font-size: 25px;
+
 }
 #butSearch-desc {
     margin-top: 10px;
+
+    padding: 4px;
+}
+
 }
 #butSearch-desc {
     width: 60%;
