@@ -38,7 +38,7 @@
   </div>
   <div id="container-getResults">
     <div id="container-butSearch">
-          <button onclick="searchPage()" id="butSearch">- - Search - -</button>
+          <button id="butSearch">- - Search - -</button>
     </div>
     <span id="butSearch-desc" class="whiteText">Please Note: We will attempt to gather how
           many results you want to view, but we cannot garentee we
@@ -69,8 +69,11 @@
       },
       body: JSON.stringify(data)
     })
+  
     .then(response => {
+      console.log(response)
       if (response.ok) {
+window.location.href='/search'
         console.log('Request successful');
         // Process the response or perform any desired actions
       } else {
@@ -81,11 +84,6 @@
       console.error('Request error:', error);
     });
   });
-
-  function searchPage() {
-      // Make a request to the server when the button is clicked
-      window.location.href = '/button-click';
-    }
 
 </script>
 
