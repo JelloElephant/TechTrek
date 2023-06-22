@@ -1,50 +1,49 @@
+<!-- general page container -->
 <div class="container">
   <div class="container-content">
-    <!-- search bar -->
+<!-- search bar -->
     <div id="container-search">
       <div id="container-searchBar">
-        <label for="location-picker" id="option-text">Choose a State/City:</label>
-          <select name="location-picker" id="location-picker">
-            <optgroup label="States">
-              <option value="Minnesota">Minnesota</option>
-              <option value="Wisconsin">Wisconsin</option>
-            </optgroup>
-            <optgroup label="Cities">
-              <option value="Maple Grove">Maple Grove</option>
-              <option value="Green Bay">Green Bay</option>
-            </optgroup>
-          </select>
-      </div>
-      <span id="searchBar-desc">
-        <span class="whiteText">Choose from our selection of Popular States and Cities</span>
-      </span>
+        <label for="location-picker" id="searchText">Choose a State/City:</label>
+        <select name="location-picker" id="location-picker">
+          <optgroup label="States">
+            <option value="Minnesota">Minnesota</option>
+            <option value="Wisconsin">Wisconsin</option>
+          </optgroup>
+          <optgroup label="Cities">
+            <option value="Maple Grove">Maple Grove</option>
+            <option value="Green Bay">Green Bay</option>
+          </optgroup>
+        </select>
       </div>
     </div>
-    <!-- choose dates -->
+<!-- date selection -->
     <div id="container-dates">
-        <div class="container-futureDate">
-            <label class="date-text" for="birthday">Start Date:</label>
-            <input class="date" type="date" id="birthday" name="birthday">
-
-        </div>
-        <i class="fa-solid fa-right-left fa-2xl" id="swapSym"></i>
-        <div class="container-pastDate">
-            <label class="date-text" for="birthday">End Date:</label>
-            <input class="date" type="date" id="birthday" name="birthday">
-        </div>
+      <!-- start of date selection-->
+      <div id="container-startDate">
+        <label class="date-text" for="birthday">Start Date:</label>
+        <input class="date" type="date" id="birthday" name="birthday">
+      </div>
+      <!-- end of date selection-->
+      <div id="container-endDate">
+        <label class="date-text" for="birthday">End Date:</label>
+        <input class="date" type="date" id="birthday" name="birthday">
+      </div>
+      
     </div>
-    <!-- choose quantity-->
+<!-- date selection -->
     <div id="container-quantity">
       <span id="quantity-text" class="whiteText">How many ideas:</span>
       <input type="text" name="quantity" id="quantity-box" value="Enter a number">
     </div>
+<!-- search button -->
     <div id="container-getResults">
       <div id="container-butSearch">
           <button id="butSearch">- - Search - -</button>
       </div>
       <span id="butSearch-desc" class="whiteText">Please Note: We will attempt to gather how
           many results you want to view, but we cannot garentee we
-          will find the amount or the last few results be certian.
+          will find the amount or the last few results to be certian.
       </span>
     </div>
   </div>
