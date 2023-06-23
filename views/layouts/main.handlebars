@@ -11,18 +11,18 @@
 </head>
 
 <body>
-
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      User Registry
-    </h1>
- 
-    {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
-    {{/if}}
-
+<!-- navbar -->
+  <header>
+    <img class="nav_logo" src="/img/TechTrek_highres.png" alt="logo">
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#" id="toggleLink" class="drac-text">Home/Search</a></li>
+          <li><a href="#" class="drac-text">My Trips</a></li>
+          <li><a href="#" class="drac-text">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#"><button>Login</button></a>
+      <a href="#"><button>Sign Up</button></a>
   </header>
 
 
@@ -37,19 +37,28 @@
   <footer>
     <div class="footer_logo"><img src="/img/TechTrek_lowres.png" alt="logo"></div>
       <ul class="list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Github</a></li>
+        <li><a href="#" class="drac-text">Home</a></li>
+        <li><a href="#" class="drac-text">Contact</a></li>
+        <li><a href="#" class="drac-text">Github</a></li>
       </ul>
   </footer>
-
-
-  
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-
 </body>
 
 </html>
+<script>
+    function homePage() {
+      window.location.href = '/';
+    }
+
+    var link = document.getElementById("toggleLink");
+link.addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the default link behavior
+
+  // Check the current page URL and toggle between the two URLs
+  if (window.location.href === "http://localhost:3001/") {
+    window.location.href = "http://localhost:3001/search";
+  } else {
+    window.location.href = "http://localhost:3001/";
+  }
+});
+</script>
