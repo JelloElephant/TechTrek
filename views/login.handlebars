@@ -1,17 +1,30 @@
-<h2>Login</h2>
 
-<form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
-    <input class="form-input" type="text" id="email-login" />
+<!-- general page container -->
+<div class="container">
+  <div class="container-content">
+<!-- log in page container -->
+    <span class="drac-text drac-text-white" id="container-LoginWelcome">Welcome</span>
+    <span class="drac-text drac-text-white" id="container-LoginTitle">- Log In to Start Planning -</span>
+    <div id="container-loginLogo">
+      <img class="" src="/img/TechTrek_lowres.png" alt="logo">
+    </div>
+    <div id="container-login"> 
+      <form class="form login-form">
+        <div class="form-group drac-text-white">
+          <label for="email-login">Email:</label>
+          <input class="form-input" type="text" id="email-login" />
+        </div>
+        <div class="form-group drac-text-white">
+          <label for="password-login">Password:</label>
+          <input class="form-input" type="password" id="password-login" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary drac-text drac-bg-animated" type="submit">login</button>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
-  </div>
-</form>
+</div>
+
 
 <script src="/js/login.js"></script>
